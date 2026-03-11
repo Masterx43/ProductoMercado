@@ -9,7 +9,6 @@ import com.mercado.Productos.model.Producto;
 import com.mercado.Productos.repository.ProductoRepository;
 
 @Service
-
 public class ProductoService {
     @Autowired
     private ProductoRepository productoRepository;
@@ -26,9 +25,6 @@ public class ProductoService {
         return productoRepository.findById(id).orElse(null);
     }
 
-    public void eliminarProducto(Long id) {
-        productoRepository.delete(id);
-    }
 
 
 

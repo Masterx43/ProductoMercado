@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.mercado.Productos.model.Producto;
 import com.mercado.Productos.service.ProductoService;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
@@ -32,7 +33,7 @@ public class ProductoController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Producto> getProductoById(Long id) {
+    public ResponseEntity<Producto> getProductoById(@PathVariable Long id) {
         Producto producto = productoService.obtenerProductoPorId(id);
         if (producto == null) {
             return ResponseEntity.notFound().build();

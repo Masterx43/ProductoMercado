@@ -72,13 +72,6 @@ public class ProductoRepository {
                 .findFirst();
     }
 
-    public void delete(Long id){
-        Optional<Producto> producto = findById(id);
-        if (producto != null){
-            int id2 = id.intValue();
-            db.remove(id2);
-        }
-    }
 
 
 }
